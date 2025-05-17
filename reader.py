@@ -1,3 +1,4 @@
+import numpy as np
 from collections.abc import Sequence
 
 
@@ -25,10 +26,16 @@ def csv_to_list(file_name: str,
     """
     with open(file_name, "r", encoding="utf-8") as input_file:
         if by == "row":
-            return [
-                [int(num) for num in row.split(sep)]
-                for row in input_file.readlines()
-            ]
+            if sep is None:
+                return [
+                    [int(num) for num in row.strip()]
+                    for row in input_file.readlines()
+                ]
+            else:
+                return [
+                    [int(num) for num in row.split(sep)]
+                    for row in input_file.readlines()
+                ]
 
         elif by == "column":
             lines = input_file.readlines()
