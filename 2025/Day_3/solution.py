@@ -55,17 +55,17 @@ def higest_value(s: str, size: int) -> int:
         # End bound of the substring.
         # It is positioned in such a way that there must be as many digits at
         # the end of the main string as are missing to construct the value to
-        # be returned.i
+        # be returned.
         # Thus, if the largest number is the last digit of the substring, then
         # there will be enough digits left to complete the value to be
         # constructed.
         end = len(s) + i
 
         # Substring between 'start' and 'end' bounds.
-        sub_bank = s[start:end]
+        sub_s = s[start:end]
 
         # Finds the higher digit and its index in the substring.
-        _max, index = max_and_index(sub_bank)
+        _max, index = max_and_index(sub_s)
 
         # Places the new start after the index of the highest value found.
         start += index + 1
