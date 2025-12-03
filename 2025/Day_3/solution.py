@@ -29,7 +29,7 @@ def max_and_index(s: str) -> (int, int):
     return _max, index
 
 
-def better_twelve(s: str, size: int) -> int:
+def higest_value(s: str, size: int) -> int:
     """
     Finds the largest value in a string.
     The digits are in order, but do not necessarily follow each other.
@@ -89,8 +89,8 @@ if __name__ == "__main__":
     FIRST = 0
     SECOND = 0
     for bank in banks:
-        FIRST += better_twelve(bank, 2)
-        SECOND += better_twelve(bank, 12)
+        FIRST += higest_value(bank, 2)
+        SECOND += higest_value(bank, 12)
 
     t = time.time() - t
 
