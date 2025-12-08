@@ -94,6 +94,6 @@ if __name__ == "__main__":
 
     t = time.time() - t
 
-    print(f"The first part solution is {FIRST:d}!")
-    print(f"The second part solution is {SECOND:d}!")
+    print(f"The first part solution is {FIRST:d}.")
+    print(f"The second part solution is {SECOND:d}.")
     print(f"Found in {t:0.5f}s!")

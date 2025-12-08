@@ -1,5 +1,5 @@
 """
-Advent of code - Day 7 (2025)
+Advent of code - Day 8 (2025)
 """
 from typing import List
 import sys
