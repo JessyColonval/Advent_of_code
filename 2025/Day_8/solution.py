@@ -65,11 +65,11 @@ if __name__ == "__main__":
     circuits = []
     TMP_CIRCUITS = None
     IS_FIRST = False
-    i = 0
-    while not IS_FIRST and i < len(sorted_pairs):
+    I_PAIR = 0
+    while not IS_FIRST and I_PAIR < len(sorted_pairs):
         # Closest box indices.
-        b0 = sorted_pairs[i][0]
-        b1 = sorted_pairs[i][1]
+        b0 = sorted_pairs[I_PAIR][0]
+        b1 = sorted_pairs[I_PAIR][1]
 
         # Gets the indices of the circuits that contain the two current boxes.
         i_l0 = get_index(b0, circuits)
@@ -100,7 +100,7 @@ if __name__ == "__main__":
             circuits.append(new_link)
 
         # Saves the link status at the LIMITth step.
-        if i == LIMIT-1:
+        if I_PAIR == LIMIT-1:
             TMP_CIRCUITS = deepcopy(circuits)
 
         # Stop the loop when all the boxes are connected to each other.
@@ -108,7 +108,7 @@ if __name__ == "__main__":
            len(circuits[0]) == len(boxes)):
             IS_FIRST = True
 
-        i += 1
+        I_PAIR += 1
 
     # Gets the 3 largest circuit in the temporary circuit.
     largest = heapq.nlargest(3, TMP_CIRCUITS, key=len)
